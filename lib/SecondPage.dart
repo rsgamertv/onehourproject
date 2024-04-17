@@ -26,7 +26,7 @@ class _SecondPageState extends State<SecondPage> {
     return Scaffold(
       body: Container(
         color: Colors.black,
-        padding: EdgeInsets.only(left: 30.w, right: 30.w, top: 30.h,bottom: 30.h),
+        padding: EdgeInsets.only(left: 10.w, right: 10.w, top: 10.h,bottom: 10.h),
         child: Chewie(controller: chewieController),
       ),
 
