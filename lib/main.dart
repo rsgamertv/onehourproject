@@ -13,7 +13,6 @@ class MyApp extends StatelessWidget {
     return FlutterSizer(
       builder: (context, orientation, screenType) {
         return MaterialApp(
-            title: 'Flutter Sizer Example',
             theme: ThemeData(
               primarySwatch: Colors.blue,
             ),

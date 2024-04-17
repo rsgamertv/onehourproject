@@ -1,3 +1,4 @@
+import 'package:chewie/chewie.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sizer/flutter_sizer.dart';
@@ -12,21 +13,21 @@ class SecondPage extends StatefulWidget {
 
 class _SecondPageState extends State<SecondPage> {
   late VideoPlayerController _controller;
-  Uri uri = Uri.parse('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+  late ChewieController chewieController;
+  Uri uri = Uri.parse('https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8');
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.networkUrl(uri)..initialize().then((value) {
-      _controller.play();
-      setState(() {});
-    }); }
+    _controller = VideoPlayerController.networkUrl(uri);
+    chewieController = ChewieController(videoPlayerController: _controller,
+    aspectRatio: 16/9);}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         color: Colors.black,
         padding: EdgeInsets.only(left: 30.w, right: 30.w, top: 30.h,bottom: 30.h),
-        child: VideoPlayer(_controller),
+        child: Chewie(controller: chewieController),
       ),
 
     );
