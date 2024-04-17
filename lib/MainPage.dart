@@ -2,6 +2,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/SecondPage.dart';
 import 'package:flutter_application_1/TextStyle.dart';
 
 class MainPage extends StatefulWidget{
@@ -95,7 +96,10 @@ class _MainPageState extends State<MainPage> {
                     String login = 'Email';
                     String password = 'Password';
                     if(login == _emailController.text && password == _passwordContoller.text){
-                        Navigator.pushNamed(context, '/Second');
+                          Navigator.push(
+             context,
+             MaterialPageRoute(builder: (context) => SecondPage()),
+           );
                     }
                     else{
                       showAboutDialog(context: context,applicationLegalese: 'Wrong info' );

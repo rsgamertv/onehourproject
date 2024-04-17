@@ -1,26 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/MainPage.dart';
 import 'package:flutter_application_1/SecondPage.dart';
+import 'package:flutter_sizer/flutter_sizer.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
-        useMaterial3: true,
-      ),
-      routes: {
-        '/Main':(context) => const MainPage(),
-        '/Second':(context) => SecondPage()
+    return FlutterSizer(
+      builder: (context, orientation, screenType) {
+        return MaterialApp(
+            title: 'Flutter Sizer Example',
+            theme: ThemeData(
+              primarySwatch: Colors.blue,
+            ),
+            routes: {
+              '/MainPage':(context) => MainPage(),
+              '/SecondPage':(context) => SecondPage()
+            },
+            initialRoute: '/SecondPage',
+        );
       },
-      initialRoute: '/Main',
     );
   }
 }
+
 
