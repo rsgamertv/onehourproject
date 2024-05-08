@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
               '/MainPage':(context) => MainPage(),
               '/SecondPage':(context) => SecondPage()
             },
-            initialRoute: '/SecondPage',
+            initialRoute: '/MainPage',
         );
       },
     );
