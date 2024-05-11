@@ -34,6 +34,9 @@ dependencies:
   video_player: ^2.8.6
   flutter_sizer: ^1.0.5
   chewie: ^1.8.1
+  yandex_mapkit: ^4.0.2
+  permission_handler: ^11.3.1
+  yandex_maps_mapkit: ^4.6.1-beta1
 
 dev_dependencies:
   flutter_test:
